@@ -29,7 +29,7 @@ const PollForm = (props) => {
         })
         axios({
             method: 'post',
-            url: 'http://localhost:3000/api/poll',
+            url: 'https://wandering-slippers-fawn.cyclic.app/api/poll',
             data:{
                 question: questionRef.current.value,
                 option1 : option_1Ref.current.value,

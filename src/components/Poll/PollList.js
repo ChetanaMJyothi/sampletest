@@ -13,7 +13,7 @@ const PollList = () => {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:3000/api/poll',
+      url: 'https://wandering-slippers-fawn.cyclic.app/api/poll',
 
       headers: {
         'Authorization': "Bearer " + loginUserToken,
@@ -36,7 +36,7 @@ const PollList = () => {
 
     axios({
       method: 'patch',
-      url: 'http://localhost:3000/api/poll',
+      url: 'https://wandering-slippers-fawn.cyclic.app/api/poll',
 
       headers: {
         'Authorization': "Bearer " + loginUserToken,
@@ -54,7 +54,7 @@ const PollList = () => {
         setPoll(response.data.allPolls)
         axios({
           method: 'get',
-          url: 'http://localhost:3000/api/poll',
+          url: 'https://wandering-slippers-fawn.cyclic.app/api/poll',
     
           headers: {
             'Authorization': "Bearer " + loginUserToken,
@@ -82,7 +82,7 @@ const PollList = () => {
     console.log(pollId);
 axios({
   method: 'delete',
-  url: 'http://localhost:3000/api/poll',
+  url: 'https://wandering-slippers-fawn.cyclic.app/api/poll',
 
   headers: {
     'Authorization': "Bearer " + loginUserToken,
@@ -98,7 +98,7 @@ axios({
     /* setPoll(response.data.allPolls) */
     axios({
       method: 'get',
-      url: 'http://localhost:3000/api/poll',
+      url: 'https://wandering-slippers-fawn.cyclic.app/api/poll',
 
       headers: {
         'Authorization': "Bearer " + loginUserToken,

@@ -1,54 +1,63 @@
-import React, {  } from 'react'
+import React, { } from 'react'
 import Main from './Main';
 import Login from './Auth/Login';
 import Sign from './Auth/Sign';
+import Option from './Poll/Option'
 import {
-    createBrowserRouter,
-    RouterProvider,
-  } from "react-router-dom";
-  import PollCreate from './Poll/PollCreate';
-  import PollList from './Poll/PollList';
-  import PollResult from './Poll/PollResult';
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import PollCreate from './Poll/PollCreate';
+import PollList from './Poll/PollList';
+import PollResult from './Poll/PollResult';
 import RouteNotFound from './Poll/RouteNotFound';
 const Layout = () => {
-    const router = createBrowserRouter([
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Login />
+    },
+    {
+      path: '/sign',
+      element: <Sign />
+    },
+    
+    {
+      path: "/main",
+      element: <Main />,
+    },
+    {
+      path: '/option',
+      element: <Option />,
+      children:[
         {
-          path: "/",
-          element: <Main/>,
-          children: [
-            {
-              path:'create',
-              element: <PollCreate/>
-            },
-            {
-              path: 'list',
-              element:<PollList/>
-            },
-            {
-              path: 'result',
-              element:<PollResult/>
-            },
-            {
-                element: <RouteNotFound/>
-            }
-      
-          ]
+          path: 'create',
+          element: <PollCreate />
         },
         {
-            path: '/login',
-            element: <Login/>
+          path: 'list',
+          element: <PollList />
         },
         {
-            path: '/sign',
-            element: <Sign/>
+          path: 'result',
+          element: <PollResult />,
+          
+        },
+        {
+          element: <RouteNotFound />
         }
-      ]);
-    return (
-        <div>
-             <RouterProvider router={router} />
-           
-        </div>
-    )
+
+      ]
+    },
+
+
+  ]);
+  return (
+    <div>
+      <RouterProvider router={router} />
+
+    </div>
+  )
 }
 
 export default Layout
